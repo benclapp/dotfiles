@@ -1,0 +1,5 @@
+alias av='aws-vault'
+alias ave='aws-vault exec'
+alias avl='aws-vault login'
+alias avls='aws-vault list'
+alias avc='aws-vault clear'

@@ -3,3 +3,9 @@
 
 
 function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
+
+# Custom
+function kla() { kubectl logs --follow --selector="app.kubernetes.io/name=$@"; }
+function ksysla() { kubectl logs --namespace "kube-system" --follow --selector="app.kubernetes.io/name=$@"; }
+function kgpowla() { watch kubectl get pods --selector="app.kubernetes.io/name=$@"; }
+function ksysgpowla() { watch kubectl get pods --namespace "kube-system" --selector="app.kubernetes.io/name=$@"; }
