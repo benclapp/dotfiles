@@ -1,2 +1,1 @@
-export EDITOR='nano'
 eval "$(/opt/homebrew/bin/brew shellenv)"
