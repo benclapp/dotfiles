@@ -1,5 +1,5 @@
-[ -f {{ .chezmoi.homeDir }}/git/hub/kubectl-aliases/.kubectl_aliases ] && source \
-  <(cat {{ .chezmoi.homeDir }}/git/hub/kubectl-aliases/.kubectl_aliases | sed -r 's/(kubectl.*) --watch/watch \1/g')
+[ -f {{ .chezmoi.homeDir }}/git/hub/benclapp/kubectl-aliases/.kubectl_aliases ] && source \
+  <(cat {{ .chezmoi.homeDir }}/git/hub/benclapp/kubectl-aliases/.kubectl_aliases | sed -r 's/(kubectl.*) --watch/watch \1/g')
 
 
 function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
