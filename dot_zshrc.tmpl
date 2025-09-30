@@ -114,11 +114,13 @@ fi
 ### Prompt tweaks
 autoload -U colors && colors
 AWS_PROMPT="%{$fg[yellow]%}aws: $AWS_VAULT%{$reset_color%} "
-PROMPT="$PROMPT$AWS_PROMPT"
 
 # kube-ps1 https://github.com/jonmosco/kube-ps1
 # PROMPT=$PROMPT'$(kube_ps1) '$'\n'
 KUBE_PS1_SYMBOL_USE_IMG=true
+
+PROMPT="$PROMPT$AWS_PROMPT"
+PROMPT=$PROMPT'$(kube_ps1) '
 
 # command-time https://github.com/popstas/zsh-command-time
 ZSH_COMMAND_TIME_MIN_SECONDS=1
