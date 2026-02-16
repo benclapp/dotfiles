@@ -15,3 +15,5 @@ kcn() {
 
 # Set default editor to nano
 export KUBE_EDITOR=nano
+
+function kubectl() { echo "+ kubectl $@"; command kubectl $@; }
