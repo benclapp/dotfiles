@@ -166,3 +166,9 @@ alias watch='KUBECOLOR_FORCE_COLORS=auto watch --color '
 export PATH="$PATH:/Users/ben/.local/bin"
 
 export AWS_PAGER=""
+
+{{ if eq .chezmoi.os "linux" }}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+{{ end }}
+
+. "$HOME/.atuin/bin/env"
