@@ -154,9 +154,9 @@ PROMPT=$PROMPT'$(kube_ps1) '
 # command-time https://github.com/popstas/zsh-command-time
 ZSH_COMMAND_TIME_MIN_SECONDS=1
 
-{{ if eq .chezmoi.os "darwin" }}
-. "$HOME/.atuin/bin/env"
-{{ end }}
+if [[ -e "$HOME/.atuin/bin/env" ]]; then
+  . "$HOME/.atuin/bin/env"
+fi
 
 eval "$(atuin init zsh --disable-up-arrow)"
 
@@ -170,5 +170,3 @@ export AWS_PAGER=""
 {{ if eq .chezmoi.os "linux" }}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 {{ end }}
-
-. "$HOME/.atuin/bin/env"
