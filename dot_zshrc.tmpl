@@ -163,6 +163,9 @@ eval "$(atuin init zsh --disable-up-arrow)"
 alias kubectl=kubecolor
 alias watch='KUBECOLOR_FORCE_COLORS=auto watch --color '
 
+b64() { base64 }
+b64d() { base64 -d }
+
 export PATH="$PATH:$HOME/.local/bin"
 
 export AWS_PAGER=""
