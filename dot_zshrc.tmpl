@@ -172,4 +172,10 @@ export AWS_PAGER=""
 
 {{ if eq .chezmoi.os "linux" }}
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
+if [[ -e "/usr/bin/xsel" ]]; then
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi
+
 {{ end }}
