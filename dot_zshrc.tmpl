@@ -142,7 +142,14 @@ fi
 
 ### Prompt tweaks
 autoload -U colors && colors
-AWS_PROMPT="%{$fg[yellow]%}aws: $AWS_VAULT%{$reset_color%} "
+
+# lighten af-magic directory colour (032 -> 153)
+PS1="${PS1//$FG[032]/$FG[153]}"
+if [[ -n "$AWS_VAULT" ]]; then
+  AWS_PROMPT="%{$fg[yellow]%}aws: $AWS_VAULT%{$reset_color%} "
+else
+  AWS_PROMPT=""
+fi
 
 # kube-ps1 https://github.com/jonmosco/kube-ps1
 # PROMPT=$PROMPT'$(kube_ps1) '$'\n'
