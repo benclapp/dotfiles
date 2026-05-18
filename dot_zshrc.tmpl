@@ -146,7 +146,7 @@ autoload -U colors && colors
 # lighten af-magic directory colour (032 -> 153)
 PS1="${PS1//$FG[032]/$FG[153]}"
 if [[ -n "$AWS_VAULT" ]]; then
-  AWS_PROMPT="%{$fg[yellow]%}aws: $AWS_VAULT%{$reset_color%} "
+  AWS_PROMPT="%{%F{226}%}aws: $AWS_VAULT%{$reset_color%} "
 else
   AWS_PROMPT=""
 fi
@@ -186,3 +186,11 @@ if [[ -e "/usr/bin/xsel" ]]; then
 fi
 
 {{ end }}
+
+{{- if (contains "halter" .chezmoi.hostname) }}
+export PATH="$PATH:$HOME/.bin"
+source ~/.halter_core
+source ~/.halter_asdf
+source ~/.halter_firmware
+source ~/.halter_backend
+{{- end }}
